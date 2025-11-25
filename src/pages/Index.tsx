@@ -107,11 +107,11 @@ export default function Index() {
 
       <section id="меню" className="py-24 bg-card">
         <div className="container mx-auto px-4">
-          <h2 className="text-5xl font-bold text-center mb-4 text-foreground">МЕНЮ</h2>
-          <p className="text-center text-muted-foreground mb-16 text-lg">Авторские рецепты и крафтовые напитки</p>
+          <h2 className="text-5xl font-bold text-center mb-4 text-foreground animate-fade-in">МЕНЮ</h2>
+          <p className="text-center text-muted-foreground mb-16 text-lg animate-fade-in">Авторские рецепты и крафтовые напитки</p>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            <Card className="bg-background border-border hover:border-primary transition-all duration-300">
+            <Card className="bg-background border-border hover:border-primary hover:scale-105 transition-all duration-300 animate-slide-in-left">
               <CardContent className="p-8">
                 <div className="flex items-start gap-4 mb-4">
                   <Icon name="Beef" size={32} className="text-primary flex-shrink-0" />
@@ -124,7 +124,7 @@ export default function Index() {
               </CardContent>
             </Card>
 
-            <Card className="bg-background border-border hover:border-primary transition-all duration-300">
+            <Card className="bg-background border-border hover:border-primary hover:scale-105 transition-all duration-300 animate-scale-in">
               <CardContent className="p-8">
                 <div className="flex items-start gap-4 mb-4">
                   <Icon name="Beef" size={32} className="text-primary flex-shrink-0" />
@@ -137,7 +137,7 @@ export default function Index() {
               </CardContent>
             </Card>
 
-            <Card className="bg-background border-border hover:border-primary transition-all duration-300">
+            <Card className="bg-background border-border hover:border-primary hover:scale-105 transition-all duration-300 animate-slide-in-left">
               <CardContent className="p-8">
                 <div className="flex items-start gap-4 mb-4">
                   <Icon name="Beer" size={32} className="text-primary flex-shrink-0" />
@@ -166,19 +166,20 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="о-нас" className="py-24">
-        <div className="container mx-auto px-4">
+      <section id="о-нас" className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-5xl font-bold text-center mb-12 text-foreground">О НАС</h2>
+            <h2 className="text-5xl font-bold text-center mb-12 text-foreground animate-fade-in">О НАС</h2>
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
+              <div className="animate-slide-in-left">
                 <img 
                   src="https://cdn.poehali.dev/projects/1de6d29e-877b-4da3-8afd-7bb01062b596/files/5c5dbab8-668c-4c59-afa8-bc2c029eaa01.jpg" 
                   alt="Интерьер Крафт Рёбра"
-                  className="w-full aspect-square object-cover rounded-sm"
+                  className="w-full aspect-square object-cover rounded-sm shadow-2xl hover:shadow-primary/20 transition-shadow duration-500"
                 />
               </div>
-              <div className="space-y-6">
+              <div className="space-y-6 animate-fade-in">
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   Крафт Рёбра — это место, где сочетаются брутальная атмосфера лофта и изысканная авторская кухня. 
                   Мы создали пространство для тех, кто ценит качество и аутентичность.
@@ -188,16 +189,16 @@ export default function Index() {
                   каждого блюда. Каждый визит к нам — это гастрономическое путешествие.
                 </p>
                 <div className="grid grid-cols-3 gap-4 pt-6">
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-primary mb-2">5+</div>
+                  <div className="text-center group cursor-pointer">
+                    <div className="text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform">5+</div>
                     <div className="text-sm text-muted-foreground">Лет опыта</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-primary mb-2">50+</div>
+                  <div className="text-center group cursor-pointer">
+                    <div className="text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform">50+</div>
                     <div className="text-sm text-muted-foreground">Блюд в меню</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-primary mb-2">1000+</div>
+                  <div className="text-center group cursor-pointer">
+                    <div className="text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform">1000+</div>
                     <div className="text-sm text-muted-foreground">Гостей</div>
                   </div>
                 </div>
@@ -209,40 +210,47 @@ export default function Index() {
 
       <section id="галерея" className="py-24 bg-card">
         <div className="container mx-auto px-4">
-          <h2 className="text-5xl font-bold text-center mb-4 text-foreground">ГАЛЕРЕЯ</h2>
-          <p className="text-center text-muted-foreground mb-16 text-lg">Атмосфера нашего заведения</p>
+          <h2 className="text-5xl font-bold text-center mb-4 text-foreground animate-fade-in">ГАЛЕРЕЯ</h2>
+          <p className="text-center text-muted-foreground mb-16 text-lg animate-fade-in">Атмосфера нашего заведения</p>
           
           <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             <img 
               src="https://cdn.poehali.dev/projects/1de6d29e-877b-4da3-8afd-7bb01062b596/files/1b4e074b-fefb-4f47-a614-4c1e4e2fc24b.jpg"
               alt="Фирменные рёбра"
-              className="aspect-square object-cover rounded-sm hover:scale-105 transition-transform duration-300 cursor-pointer"
+              className="aspect-square object-cover rounded-sm hover:scale-110 hover:shadow-2xl transition-all duration-500 cursor-pointer animate-scale-in"
             />
             <img 
               src="https://cdn.poehali.dev/projects/1de6d29e-877b-4da3-8afd-7bb01062b596/files/dc0dae8b-18b8-4695-9e01-f1f1a80234f6.jpg"
               alt="Крафтовые напитки"
-              className="aspect-square object-cover rounded-sm hover:scale-105 transition-transform duration-300 cursor-pointer"
+              className="aspect-square object-cover rounded-sm hover:scale-110 hover:shadow-2xl transition-all duration-500 cursor-pointer animate-scale-in"
             />
             <img 
               src="https://cdn.poehali.dev/projects/1de6d29e-877b-4da3-8afd-7bb01062b596/files/5c5dbab8-668c-4c59-afa8-bc2c029eaa01.jpg"
               alt="Интерьер бар-кафе"
-              className="aspect-square object-cover rounded-sm hover:scale-105 transition-transform duration-300 cursor-pointer"
+              className="aspect-square object-cover rounded-sm hover:scale-110 hover:shadow-2xl transition-all duration-500 cursor-pointer animate-scale-in"
             />
-            <div className="aspect-square bg-secondary/20 rounded-sm hover:scale-105 transition-transform duration-300 cursor-pointer"></div>
-            <div className="aspect-square bg-secondary/20 rounded-sm hover:scale-105 transition-transform duration-300 cursor-pointer"></div>
-            <div className="aspect-square bg-secondary/20 rounded-sm hover:scale-105 transition-transform duration-300 cursor-pointer"></div>
+            <div className="aspect-square bg-gradient-to-br from-secondary/30 to-primary/20 rounded-sm hover:scale-105 transition-transform duration-300 cursor-pointer animate-scale-in flex items-center justify-center">
+              <Icon name="Camera" size={64} className="text-muted-foreground/40" />
+            </div>
+            <div className="aspect-square bg-gradient-to-br from-primary/20 to-secondary/30 rounded-sm hover:scale-105 transition-transform duration-300 cursor-pointer animate-scale-in flex items-center justify-center">
+              <Icon name="Camera" size={64} className="text-muted-foreground/40" />
+            </div>
+            <div className="aspect-square bg-gradient-to-br from-secondary/30 to-primary/20 rounded-sm hover:scale-105 transition-transform duration-300 cursor-pointer animate-scale-in flex items-center justify-center">
+              <Icon name="Camera" size={64} className="text-muted-foreground/40" />
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="акции" className="py-24">
-        <div className="container mx-auto px-4">
-          <h2 className="text-5xl font-bold text-center mb-16 text-foreground">АКЦИИ</h2>
+      <section id="акции" className="py-24 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <h2 className="text-5xl font-bold text-center mb-16 text-foreground animate-fade-in">АКЦИИ</h2>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <Card className="bg-gradient-to-br from-primary/20 to-secondary/20 border-primary">
+            <Card className="bg-gradient-to-br from-primary/20 to-secondary/20 border-primary hover:border-primary hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 animate-slide-in-left">
               <CardContent className="p-8">
-                <Icon name="Percent" size={48} className="text-primary mb-4" />
+                <Icon name="Percent" size={48} className="text-primary mb-4 animate-float" />
                 <h3 className="text-3xl font-bold mb-4">Счастливые часы</h3>
                 <p className="text-muted-foreground mb-4 text-lg">
                   С 15:00 до 18:00 скидка 20% на все крафтовые напитки
@@ -251,9 +259,9 @@ export default function Index() {
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-to-br from-secondary/20 to-primary/20 border-primary">
+            <Card className="bg-gradient-to-br from-secondary/20 to-primary/20 border-primary hover:border-primary hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 animate-scale-in">
               <CardContent className="p-8">
-                <Icon name="Gift" size={48} className="text-primary mb-4" />
+                <Icon name="Gift" size={48} className="text-primary mb-4 animate-float" />
                 <h3 className="text-3xl font-bold mb-4">Комбо-сет</h3>
                 <p className="text-muted-foreground mb-4 text-lg">
                   Рёбра + гарнир + напиток со скидкой 15%
@@ -267,7 +275,7 @@ export default function Index() {
 
       <section id="отзывы" className="py-24 bg-card">
         <div className="container mx-auto px-4">
-          <h2 className="text-5xl font-bold text-center mb-16 text-foreground">ОТЗЫВЫ</h2>
+          <h2 className="text-5xl font-bold text-center mb-16 text-foreground animate-fade-in">ОТЗЫВЫ</h2>
           
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
@@ -275,7 +283,7 @@ export default function Index() {
               { name: 'Мария К.', text: 'Отличное место для встреч с друзьями. Крафтовое пиво превосходное, а рёбра тают во рту.' },
               { name: 'Дмитрий П.', text: 'Брутальный интерьер и изысканная кухня — идеальное сочетание. Обязательно вернёмся!' },
             ].map((review, idx) => (
-              <Card key={idx} className="bg-background border-border">
+              <Card key={idx} className="bg-background border-border hover:border-primary hover:shadow-xl transition-all duration-500 animate-scale-in">
                 <CardContent className="p-6">
                   <div className="flex gap-1 mb-4">
                     {[...Array(5)].map((_, i) => (
@@ -291,13 +299,14 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="бронирование" className="py-24">
-        <div className="container mx-auto px-4">
+      <section id="бронирование" className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-primary/10"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-2xl mx-auto">
-            <h2 className="text-5xl font-bold text-center mb-4 text-foreground">БРОНИРОВАНИЕ</h2>
-            <p className="text-center text-muted-foreground mb-12 text-lg">Забронируйте столик прямо сейчас</p>
+            <h2 className="text-5xl font-bold text-center mb-4 text-foreground animate-fade-in">БРОНИРОВАНИЕ</h2>
+            <p className="text-center text-muted-foreground mb-12 text-lg animate-fade-in">Забронируйте столик прямо сейчас</p>
             
-            <Card className="bg-card border-border">
+            <Card className="bg-card border-border shadow-2xl hover:shadow-primary/10 transition-shadow duration-500 animate-scale-in">
               <CardContent className="p-8">
                 <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                   <div>
@@ -367,7 +376,7 @@ export default function Index() {
               <CardContent className="p-8">
                 <Icon name="MapPin" size={48} className="text-primary mx-auto mb-4" />
                 <h3 className="text-xl font-bold mb-2">Адрес</h3>
-                <p className="text-muted-foreground">г. Москва, ул. Лофт, д. 15</p>
+                <p className="text-muted-foreground">г. Москва, Пресненская наб., 12</p>
               </CardContent>
             </Card>
 
@@ -386,6 +395,20 @@ export default function Index() {
                 <p className="text-muted-foreground">Пн-Вс: 12:00 - 02:00</p>
               </CardContent>
             </Card>
+          </div>
+          
+          <div className="mt-16 max-w-5xl mx-auto">
+            <h3 className="text-3xl font-bold text-center mb-8 text-foreground">Как нас найти</h3>
+            <div className="rounded-lg overflow-hidden border-2 border-border shadow-xl">
+              <iframe 
+                src="https://yandex.ru/map-widget/v1/?ll=37.538296%2C55.748341&z=16&l=map&pt=37.538296,55.748341,pm2rdm" 
+                width="100%" 
+                height="400" 
+                frameBorder="0"
+                className="w-full"
+                title="Карта расположения Крафт Рёбра"
+              ></iframe>
+            </div>
           </div>
         </div>
       </section>
