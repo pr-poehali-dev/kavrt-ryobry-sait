@@ -11,10 +11,12 @@ export default function Index() {
     date: '',
     guests: '',
   });
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: 'smooth' });
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -34,11 +36,39 @@ export default function Index() {
                 </button>
               ))}
             </div>
-            <Button onClick={() => scrollToSection('бронирование')} className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              Забронировать
-            </Button>
+            <div className="flex items-center gap-4">
+              <Button 
+                onClick={() => scrollToSection('бронирование')} 
+                className="hidden md:block bg-primary hover:bg-primary/90 text-primary-foreground"
+              >
+                Забронировать
+              </Button>
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="md:hidden text-foreground"
+                aria-label="Toggle menu"
+              >
+                <Icon name={isMobileMenuOpen ? 'X' : 'Menu'} size={28} />
+              </button>
+            </div>
           </div>
         </nav>
+
+        {isMobileMenuOpen && (
+          <div className="md:hidden bg-background/98 backdrop-blur-md border-t border-border animate-fade-in">
+            <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
+              {['Главная', 'Меню', 'О нас', 'Галерея', 'Акции', 'Отзывы', 'Контакты', 'Бронирование'].map((item) => (
+                <button
+                  key={item}
+                  onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
+                  className="text-left text-lg text-foreground hover:text-primary transition-colors duration-300 font-medium py-2"
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
       </header>
 
       <section id="главная" className="relative min-h-screen flex items-center justify-center pt-20">
